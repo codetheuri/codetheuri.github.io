@@ -619,22 +619,32 @@ body {
 
 .services-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr; /* 1 column on mobile */
   gap: 1.5rem;
 }
 
+/* Tablet: 2 columns (768px+) */
 @media (min-width: 768px) {
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
+/* Laptop/Desktop: 3 columns (1024px+) */
 @media (min-width: 1024px) {
   .services-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
+/* Wide Screens: 6 columns (1440px+) */
+@media (min-width: 1440px) {
+  .services-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+/* Rest of your existing CSS remains the same */
 .service-card {
   background: var(--gradient-card);
   border: none;
